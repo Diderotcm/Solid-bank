@@ -6,7 +6,7 @@ from PIL import Image
 
 def avaliador_credito(dados_novo):
 
-    modelo = load("D:\Github\Solid-bank\Modelo\modelo_pipe.joblib")
+    modelo = load("Modelo\modelo_pipe.joblib")
 
     df_dados_novo_cliente = pd.DataFrame(data=dados_novo,index=[0])
     previsao = modelo.predict(df_dados_novo_cliente)[0]
@@ -42,7 +42,7 @@ my_expander_3 = st.expander('E como anda a familia??')
 
 
 dados_novo_cliente = {}
-opcao_feature = load("D:\\Github\\Solid-bank\\utilitarios\\opcao_feature")
+opcao_feature = load("utilitarios\\opcao_feature")
 
 with my_expander_1:
     col1, col2 = st.columns(2)
