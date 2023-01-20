@@ -15,7 +15,7 @@ def avaliador_credito(dados_novo):
     return previsao
 
 
-image = Image.open("D:\\Github\\Solid-bank\\logos\\logo_canva_02.png")
+image = Image.open("D:\Github\Solid-bank\logos\logo_canva_02.png")
 st.image(image)
 
 st.write('<p style="text-align: center;">Solid bank</strong> é um banco virtual criado com o intuito de facilitar a '
