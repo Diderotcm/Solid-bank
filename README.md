@@ -1,11 +1,12 @@
 
-![Logo](https://raw.githubusercontent.com/Diderotcm/Solid-bank/main/logos/logo_canva_02.png)
 
+<p align= "center">
+<img src="https://raw.githubusercontent.com/Diderotcm/Solid-bank/main/logos/logo_canva_02.png" min-width="50px" max-width="200px" width="500px" > 
+</p>
 
-
-
-Acesse o App [Solid-Bank](https://diderotcm-solid-bank-app-credito-nqxl87.streamlit.app/)
-
+<p align= "center">
+Acesse o App: <a href="https://diderotcm-solid-bank-app-credito-nqxl87.streamlit.app/">Solid Bank</a>
+</p>
 
 # SOLID BANK
 
