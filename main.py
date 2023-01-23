@@ -6,7 +6,7 @@ from PIL import Image
 
 def avaliador_credito(dados_novo):
 
-    modelo = load("Modelo/opa/modelo_pipe.joblib")
+    modelo = load("Modelo/modelo_pipe.joblib")
 
     df_dados_novo_cliente = pd.DataFrame(data=dados_novo,index=[0])
     previsao = modelo.predict(df_dados_novo_cliente)[0]
