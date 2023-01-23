@@ -4,6 +4,7 @@ import pandas as pd
 from PIL import Image
 
 
+
 def avaliador_credito(dados_novo):
 
     modelo = load("Modelo/modelo_pipe.joblib")
@@ -33,12 +34,12 @@ st.write('<p style="text-align: center;">Nós vamos precisar de algumas informa�
 st.write('<h2 <u style="text-align: center;color: grey">É rapidinho!!</u></h2>',
          unsafe_allow_html=True)
 st.write('<p style="text-align: left;">Basta preencher o fomulario abaixo e'
-         ' logo em seguida clicar em <span style="color:red"><b> Avaliar credito.</b></span>'
+         ' logo em seguida clicar em <span style="color:blue"><b> Avaliar credito.</b></span>'
          ' todas as informações são privadas.</p><br>', unsafe_allow_html=True)
 
 
 my_expander_1 = st.expander('Primeiro seria MASSA te conhecer um pouco melhor.')
-my_expander_2 = st.expander('Sabemos que trabalho é chato, mas nos fale um pouco sobre.')
+my_expander_2 = st.expander('Nós conte sobre o trabalho!')
 my_expander_3 = st.expander('E como anda a familia??')
 
 
@@ -116,10 +117,17 @@ def negado():
              ' machine learning com dados do Kaggle')
 
     st.write(
-        '<p style="text-align: center;"><b>Acesse os dados:</b><br> '
-        ' <a style="color: lightblue" target="_blank" '
-        'href ="https://www.kaggle.com/datasets/rikdifos/credit-card-approval-prediction">Dados Kaggle</a><p>',
+        '<p style="text-align: center;"><b>Quer saber de onde os dados foram tirados?:</b><br> '
+        ' Acesse os dados: <a style="color: lightblue" target="_blank" '
+        'href ="https://www.kaggle.com/datasets/rikdifos/credit-card-approval-prediction">Kaggle</a><p>',
         unsafe_allow_html=True)
+
+    st.write(
+        '<p style="text-align: center;"><b>Quer saber como esse projeto foi feito?</b><br>'
+        ' Acesse no Github: <a style="color: lightblue" target="_blank"'
+        ' href ="https://github.com/Diderotcm/Solid-bank">Solid-Bank</a><p>',
+        unsafe_allow_html=True)
+
 
 def aprovado():
 
@@ -136,10 +144,17 @@ def aprovado():
              ' que utiliza dados do kaggel.')
 
     st.write(
-        '<p style="text-align: center;"><b>Acesse os dados:</b><br> '
-        ' <a style="color: lightblue" target="_blank" '
-        'href ="https://www.kaggle.com/datasets/rikdifos/credit-card-approval-prediction">Dados Kaggle</a><p>',
+        '<p style="text-align: center;"><b>Quer saber de onde os dados foram tirados?:</b><br> '
+        ' Acesse os dados: <a style="color: lightblue" target="_blank" '
+        'href ="https://www.kaggle.com/datasets/rikdifos/credit-card-approval-prediction">Kaggle</a><p>',
         unsafe_allow_html=True)
+
+    st.write(
+        '<p style="text-align: center;"><b>Quer saber como esse projeto foi feito?</b><br>'
+        ' Acesse no Github: <a style="color: lightblue" target="_blank"'
+        ' href ="https://github.com/Diderotcm/Solid-bank">Solid-Bank</a><p>',
+        unsafe_allow_html=True)
+
 
 if col2.button('Avaliar crédito'):
        if avaliador_credito(dados_novo_cliente)==1:
