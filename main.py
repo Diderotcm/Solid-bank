@@ -20,18 +20,20 @@ st.image(image)
 
 st.write('<p style="text-align: center;">Solid bank</strong> é um banco virtual criado com o intuito de facilitar a '
          'vida de milhões de brasileiros que sempre buscaram a facilidade'
-         'e praticidade para resolver tudo na palma da mão</p><br><hr>',
+         ' e praticidade para resolver tudo na palma da mão</p><br><hr>',
          unsafe_allow_html=True)
 
 st.write('<h1 <u style="text-align: center;color: grey">Avalie seu Crédito</u></h1>',
          unsafe_allow_html=True)
 
-st.write('<p style="text-align: center;">Nós vamos precisar de algumas informações para começar a usar nossos serviços de crédito,'
-         'mas prometemos que não levarão mais que <b> 5 min <b> pra preencher tudinho!!!.</p><br><hr>', unsafe_allow_html=True)
+st.write('<p style="text-align: center;">Nós vamos precisar de algumas informações para começar a usar'
+         ' nossos serviços de crédito,'
+         ' mas prometemos que não levarão mais que <b> 5 min <b> pra preencher tudinho!!!.</p><br><hr>', unsafe_allow_html=True)
 
-st.write('<h3 <u style="text-align: left;color: grey">Nós conte um pouco do seu trablaho</u></h3>',
+st.write('<h2 <u style="text-align: center;color: grey">É rapidinho!!</u></h2>',
          unsafe_allow_html=True)
-st.write('<p style="text-align: left;">Primeiro gostariamos de saber um pouco mais sobre o seu trabalho, Mas pode ficar tranquilo'
+st.write('<p style="text-align: left;">Basta preencher o fomulario abaixo e'
+         ' logo em seguida clicar em <span style="color:red"><b> Avaliar credito.</b></span>'
          ' todas as informações são privadas.</p><br>', unsafe_allow_html=True)
 
 
@@ -76,7 +78,7 @@ with my_expander_2:
 
     dados_novo_cliente['ANOS_EMPREGO'] = col2.slider(
         'A quanto tempo você está empregado?', help='Caso não esteja trabalhando, basta responder 0',
-        min_value=0, max_value=80,step=1)
+        min_value=0, max_value=45,step=1)
 
 
 
@@ -92,33 +94,52 @@ with my_expander_3:
 
     dados_novo_cliente['N_FILHOS'] = col2.slider(
         'E as crianças, são quantas?', help='criança da trabalho mesmo mas é bom demais!!!',
-        min_value=0, max_value=15, step=1)
+        min_value=0, max_value=20, step=1)
 
     dados_novo_cliente['TAM_FAMILIA'] = col2.slider(
-        'Quantas pessoas integram sua família?', min_value=0, max_value=30, step=1)
+        'Quantas pessoas integram sua família?', min_value=0, max_value=20, step=1)
 
 
 col1, col2, col3 = st.columns([1.3, 1, 1])
-col4, col5, col6 = st.columns([1, 4, 1])
+
 
 
 def negado():
-    st.error('Crédito negado')
-    st.write('<h1 <u style="text-align: center;color: red">own!!!</u></h1>',
+    st.write('<h1 <u style="text-align: center;color: red">own!! &#128549;</u></h1>',
              unsafe_allow_html=True)
-def aprovado():
-    col4, col5, col6 = st.columns([1, 4, 1])
 
-    st.write('<h1 <u style="text-align: center;color: green">BOAAAAA!!!</u></h1>',
+    st.write('<h3 <u style="text-align: center;color: red">Infelizmente nao podemos disponibilizar crédito'
+             ' no momento</u></h3>',
              unsafe_allow_html=True)
+
+    st.write('mas nao fique triste, é apenas um projeto de simulação utilizando modelo de'
+             ' machine learning com dados do Kaggle')
+
+    st.write(
+        '<p style="text-align: center;"><b>Acesse os dados:</b><br> '
+        ' <a style="color: lightblue" target="_blank" '
+        'href ="https://www.kaggle.com/datasets/rikdifos/credit-card-approval-prediction">Dados Kaggle</a><p>',
+        unsafe_allow_html=True)
+
+def aprovado():
+
+
+    st.write('<h1 <u style="text-align: center;color: green">BOAAAAA!!! &#128526; </u></h1>',
+             unsafe_allow_html=True)
+
 
     st.write('<h3 <u style="text-align: center;color: green">Seu credito foi aprovado com a gente!!!</u></h3>',
              unsafe_allow_html=True)
 
 
-    st.write('Seria muito massa se fosse verdade, ne? mas é apenas um projeto de simulação utilizando modelos de machine learning')
-    col5.success('Crédito aprovado')
+    st.write('Seria muito divertido de fosse real, ne? mas isso é apenas um projeto de machine learning'
+             ' que utiliza dados do kaggel.')
 
+    st.write(
+        '<p style="text-align: center;"><b>Acesse os dados:</b><br> '
+        ' <a style="color: lightblue" target="_blank" '
+        'href ="https://www.kaggle.com/datasets/rikdifos/credit-card-approval-prediction">Dados Kaggle</a><p>',
+        unsafe_allow_html=True)
 
 if col2.button('Avaliar crédito'):
        if avaliador_credito(dados_novo_cliente)==1:
