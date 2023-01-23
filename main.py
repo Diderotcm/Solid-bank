@@ -15,7 +15,7 @@ def avaliador_credito(dados_novo):
     return previsao
 
 
-image = Image.open("logos\logo_canva_02.png")
+image = Image.open("logos/logo_canva_02.png")
 st.image(image)
 
 st.write('<p style="text-align: center;">Solid bank</strong> é um banco virtual criado com o intuito de facilitar a '
@@ -42,7 +42,7 @@ my_expander_3 = st.expander('E como anda a familia??')
 
 
 dados_novo_cliente = {}
-opcao_feature = load("utilitarios\\opcao_feature")
+opcao_feature = load("utilitarios\opcao_feature")
 
 with my_expander_1:
     col1, col2 = st.columns(2)
