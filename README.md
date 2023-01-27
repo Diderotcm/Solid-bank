@@ -1,7 +1,7 @@
 
 
 <p align= "center">
-<img src="https://raw.githubusercontent.com/Diderotcm/Solid-bank/main/logos/logo_canva_02.png" min-width="50px" max-width="200px" width="500px" > 
+<img src="https://raw.githubusercontent.com/Diderotcm/Solid-bank/main/logos/logo_solid-bank.png" min-width="50px" max-width="200px" width="500px" > 
 </p>
 
 <p align= "center">
