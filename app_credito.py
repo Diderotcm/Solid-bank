@@ -16,7 +16,7 @@ def avaliador_credito(dados_novo):
     return previsao
 
 
-image = Image.open("logos/logo_canva_02.png")
+image = Image.open("logos/logo_solid-bank.png")
 st.image(image)
 
 st.write('<p style="text-align: center;">Solid bank</strong> é um banco virtual criado com o intuito de facilitar a '
@@ -24,17 +24,17 @@ st.write('<p style="text-align: center;">Solid bank</strong> é um banco virtual
          ' e praticidade para resolver tudo na palma da mão</p><br><hr>',
          unsafe_allow_html=True)
 
-st.write('<h1 <u style="text-align: center;color: grey">Avalie seu Crédito</u></h1>',
+st.write('<h1 <u style="text-align: center;color: #166D8A">Avalie seu Crédito</u></h1>',
          unsafe_allow_html=True)
 
 st.write('<p style="text-align: center;">Nós vamos precisar de algumas informações para começar a usar'
          ' nossos serviços de crédito,'
          ' mas prometemos que não levarão mais que <b> 5 min <b> pra preencher tudinho!!!.</p><br><hr>', unsafe_allow_html=True)
 
-st.write('<h2 <u style="text-align: center;color: grey">É rapidinho!!</u></h2>',
+st.write('<h2 <u style="text-align: center;color: #166D8A">É rapidinho!!</u></h2>',
          unsafe_allow_html=True)
 st.write('<p style="text-align: left;">Basta preencher o fomulario abaixo e'
-         ' logo em seguida clicar em <span style="color:blue"><b> Avaliar credito.</b></span>'
+         ' logo em seguida clicar em <span style="color:#166D8A"><b> Avaliar credito.</b></span>'
          ' todas as informações são privadas.</p><br>', unsafe_allow_html=True)
 
 
@@ -101,11 +101,12 @@ with my_expander_3:
         'Quantas pessoas integram sua família?', min_value=0, max_value=20, step=1)
 
 
-col1, col2, col3 = st.columns([1.3, 1, 1])
+col1, col2, col3 = st.columns([1.4, 1, 1])
 
 
 
 def negado():
+
     st.write('<h1 <u style="text-align: center;color: red">own!! &#128549;</u></h1>',
              unsafe_allow_html=True)
 
@@ -116,16 +117,40 @@ def negado():
     st.write('mas nao fique triste, é apenas um projeto de simulação utilizando modelo de'
              ' machine learning com dados do Kaggle')
 
+    col1, col2, col3 = st.columns([1.5, 1, 1])
+    col1.write(' ')
+    col2.image("logos/kaggle_resize.png")
+    col1.write(' ')
+
     st.write(
-        '<p style="text-align: center;"><b>Quer saber de onde os dados foram tirados?:</b><br> '
+        '<p style="text-align: center;"><b>Quer saber de onde os dados foram tirados?</b><br> '
         ' Acesse os dados: <a style="color: lightblue" target="_blank" '
         'href ="https://www.kaggle.com/datasets/rikdifos/credit-card-approval-prediction">Kaggle</a><p>',
-        unsafe_allow_html=True)
+            unsafe_allow_html=True)
+
+
+    col4, col5, col6 = st.columns([1.4, 1, 1])
+    col4.write(' ')
+    col5.image("logos/github_resize.png")
+    col6.write(' ')
+
 
     st.write(
         '<p style="text-align: center;"><b>Quer saber como esse projeto foi feito?</b><br>'
         ' Acesse no Github: <a style="color: lightblue" target="_blank"'
         ' href ="https://github.com/Diderotcm/Solid-bank">Solid-Bank</a><p>',
+        unsafe_allow_html=True)
+
+    col7, col8, col9 = st.columns([1.4, 1, 1])
+    col7.write(' ')
+    col8.image("logos/LinkedIn_resize.png")
+    col9.write(' ')
+
+
+    st.write(
+        '<p style="text-align: center;"><b>Da uma olhadinha no meu linkedin!!</b><br>'
+        ' Acesse o Linkedin: <a style="color: lightblue" target="_blank"'
+        ' href ="https://www.linkedin.com/in/fernando-diderot">Fernando Diderot</a><p>',
         unsafe_allow_html=True)
 
 
@@ -143,17 +168,43 @@ def aprovado():
     st.write('Seria muito divertido de fosse real, ne? mas isso é apenas um projeto de machine learning'
              ' que utiliza dados do kaggel.')
 
+
+    col1, col2, col3 = st.columns([1.5, 1, 1])
+    col1.write(' ')
+    col2.image("logos/kaggle_resize.png")
+    col1.write(' ')
+
     st.write(
-        '<p style="text-align: center;"><b>Quer saber de onde os dados foram tirados?:</b><br> '
+        '<p style="text-align: center;"><b>Quer saber de onde os dados foram tirados?</b><br> '
         ' Acesse os dados: <a style="color: lightblue" target="_blank" '
         'href ="https://www.kaggle.com/datasets/rikdifos/credit-card-approval-prediction">Kaggle</a><p>',
-        unsafe_allow_html=True)
+            unsafe_allow_html=True)
+
+
+    col4, col5, col6 = st.columns([1.4, 1, 1])
+    col4.write(' ')
+    col5.image("logos/github_resize.png")
+    col6.write(' ')
+
 
     st.write(
         '<p style="text-align: center;"><b>Quer saber como esse projeto foi feito?</b><br>'
         ' Acesse no Github: <a style="color: lightblue" target="_blank"'
         ' href ="https://github.com/Diderotcm/Solid-bank">Solid-Bank</a><p>',
         unsafe_allow_html=True)
+
+    col7, col8, col9 = st.columns([1.4, 1, 1])
+    col7.write(' ')
+    col8.image("logos/LinkedIn_resize.png")
+    col9.write(' ')
+
+
+    st.write(
+        '<p style="text-align: center;"><b>Da uma olhadinha no meu linkedin!!</b><br>'
+        ' Acesse o Linkedin: <a style="color: lightblue" target="_blank"'
+        ' href ="https://www.linkedin.com/in/fernando-diderot">Fernando Diderot</a><p>',
+        unsafe_allow_html=True)
+
 
 
 if col2.button('Avaliar crédito'):
