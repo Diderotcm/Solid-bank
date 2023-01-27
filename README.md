@@ -17,14 +17,14 @@ que prevê se um novo cliente é um bom pagador ou não.
 
 O projeto foi ralizado em 3 etapas:
 
-- __Limpeza e tradução dos dados__
+- __Limpeza e tradução dos dados:__
 foi realizado primeiro a tradução de todo o bnco de dados e em seguida realizada a Limpeza
 tratando valores ausente, removendo ouliers e etc.
-- __Crianção do modelo.__
+- __Crianção do modelo:__
 criação de diversos modelos e aplicando o modelo que melhor se enquadra no bando de dados
 alem de utilização de tecnicas de otimização de hiper parametros.
 
-- __Criação do App__
+- __Criação do App:__
 App criado com a API streamlit, uma API especifica para deploy e aplicação de modelos
 de machine learning.
 
