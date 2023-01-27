@@ -8,7 +8,7 @@
 Acesse o App: <a href="https://diderotcm-solid-bank-app-credito-nqxl87.streamlit.app/">Solid Bank</a>
 </p>
 
-
+## **SOLID BANK**
 
 é um projeto de um banco virtual criado com o intuito de
 disponibilizar crédito utilizando um modelo de machine learning
