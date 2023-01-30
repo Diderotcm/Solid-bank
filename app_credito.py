@@ -1,4 +1,5 @@
 import streamlit as st
+import plotly.express as px
 from joblib import load
 import pandas as pd
 from PIL import Image
@@ -9,8 +10,8 @@ from streamlit_option_menu import option_menu
 with st.sidebar:
     select = option_menu(
         menu_title=None,
-        options=['Home', 'Projeto', 'Contato'],
-        icons=['house', 'book', 'envelope'],
+        options=['Home', 'Dashboard', 'Projeto', 'Contato'],
+        icons=['house', 'bar-chart', 'book', 'envelope'],
         menu_icon='cast',
         default_index=0,
 
@@ -20,7 +21,7 @@ if select == 'Home':
 
         modelo = load("Modelo/modelo_pipe.joblib")
 
-        df_dados_novo_cliente = pd.DataFrame(data=dados_novo,index=[0])
+        df_dados_novo_cliente = pd.DataFrame(data=dados_novo, index=[0])
         previsao = modelo.predict(df_dados_novo_cliente)[0]
 
 
@@ -40,7 +41,8 @@ if select == 'Home':
 
     st.write('<p style="text-align: center;">Nós vamos precisar de algumas informações para começar a usar'
              ' nossos serviços de crédito,'
-             ' mas prometemos que não levarão mais que <b> 5 min <b> pra preencher tudinho!!!.</p><br><hr>', unsafe_allow_html=True)
+             ' mas prometemos que não levarão mais que <b> 5 min <b> pra preencher tudinho!!!.</p><br><hr>',
+             unsafe_allow_html=True)
 
     st.write('<h2 <u style="text-align: center;color: #166D8A">É rapidinho!!</u></h2>',
              unsafe_allow_html=True)
@@ -283,3 +285,6 @@ if select == 'Contato':
         'Linkedin: <a style="color: lightblue" target="_blank"'
         ' href ="https://www.linkedin.com/in/fernando-diderot">Fernando Diderot</a><p>',
         unsafe_allow_html=True)
+
+if select == 'Dashboard':
+    
