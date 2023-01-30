@@ -287,4 +287,5 @@ if select == 'Contato':
         unsafe_allow_html=True)
 
 if select == 'Dashboard':
-    
+   df = pd.read_csv('https://raw.githubusercontent.com/Diderotcm/Solid-bank/main/Dados/df_merge.csv')
+   st.write(df)
