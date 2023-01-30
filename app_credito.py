@@ -233,9 +233,15 @@ if select == 'Projeto':
     st.write('')
 
     st.write(
-        '<p style="text-align: left;"><b>Notebook de preparação dos dados:</b><br> '
+        '<p style="text-align: left;"><b>📙 Notebook de preparação dos dados:</b><br> '
         '  <a style="color: lightblue" target="_blank" '
-        'href ="https://www.kaggle.com/datasets/rikdifos/credit-card-approval-prediction">Notebook</a><p>',
+        'href ="https://github.com/Diderotcm/Solid-bank/blob/main/Notebooks/Solid_Bank_prepara%C3%A7%C3%A3o_dados.ipynb">Notebook</a><p>',
+        unsafe_allow_html=True)
+
+    st.write(
+        '<p style="text-align: left;"><b>📙 Notebook de machine learning:</b><br> '
+        '  <a style="color: lightblue" target="_blank" '
+        'href ="https://github.com/Diderotcm/Solid-bank/blob/main/Notebooks/Solid-Bank-Machine_Leaning.ipynb">Notebook</a><p>',
         unsafe_allow_html=True)
 
     col1, col2 = st.columns(2)
