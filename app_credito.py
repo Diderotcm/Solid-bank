@@ -3,7 +3,7 @@ from joblib import load
 import pandas as pd
 from PIL import Image
 
-
+#st.set_page_config(layout="centered")
 
 def avaliador_credito(dados_novo):
 
@@ -155,8 +155,7 @@ def negado():
 
 
 def aprovado():
-
-
+    st.balloons()
     st.write('<h1 <u style="text-align: center;color: green">BOAAAAA!!! &#128526; </u></h1>',
              unsafe_allow_html=True)
 
