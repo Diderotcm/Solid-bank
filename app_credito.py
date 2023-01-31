@@ -4,6 +4,7 @@ from joblib import load
 import pandas as pd
 from PIL import Image
 from streamlit_option_menu import option_menu
+import webbrowser
 
 #st.set_page_config(layout="centered")
 
@@ -24,14 +25,12 @@ if select == 'Home':
         df_dados_novo_cliente = pd.DataFrame(data=dados_novo, index=[0])
         previsao = modelo.predict(df_dados_novo_cliente)[0]
 
-
         return previsao
-
 
     image = Image.open("logos/logo_solid-bank.png")
     st.image(image)
 
-    st.write('<p style="text-align: center;">Solid bank</strong> é um banco virtual criado com o intuito de facilitar a '
+    st.write('<p style="text-align: center;">Solid bank</strong> é um banco virtual criado com o intuito de facilitar a'
              'vida de milhões de brasileiros que sempre buscaram a facilidade'
              ' e praticidade para resolver tudo na palma da mão</p><br><hr>',
              unsafe_allow_html=True)
@@ -50,12 +49,9 @@ if select == 'Home':
              ' logo em seguida clicar em <span style="color:#166D8A"><b> Avaliar credito.</b></span>'
              ' todas as informações são privadas.</p><br>', unsafe_allow_html=True)
 
-
     my_expander_1 = st.expander('Primeiro seria MASSA te conhecer um pouco melhor.')
     my_expander_2 = st.expander('Nós conte sobre o trabalho!')
     my_expander_3 = st.expander('E como anda a familia??')
-
-
 
     dados_novo_cliente = {}
     opcao_feature = load("utilitarios/opcao_feature")
@@ -94,17 +90,14 @@ if select == 'Home':
             'A quanto tempo você está empregado?', help='Caso não esteja trabalhando, basta responder 0',
             min_value=0, max_value=45,step=1)
 
-
-
     with my_expander_3:
         col1, col2 = st.columns(2)
 
         dados_novo_cliente['IMOVEL_PROPRIO'] = 1 if col1.radio(
             "Você tem casa propria?", ('Sim!', 'Não')) == 'Sim!' else 0
 
-
         dados_novo_cliente['TEM_CARRO'] = 1 if col1.radio(
-            "Você tem carro proprio?", ('Sim!', 'Não')) == 'Sim!' else 0
+            'Você tem carro proprio?', ('Sim!', 'Não')) == 'Sim!' else 0
 
         dados_novo_cliente['N_FILHOS'] = col2.slider(
             'E as crianças, são quantas?', help='criança da trabalho mesmo mas é bom demais!!!',
@@ -113,10 +106,7 @@ if select == 'Home':
         dados_novo_cliente['TAM_FAMILIA'] = col2.slider(
             'Quantas pessoas integram sua família?', min_value=0, max_value=20, step=1)
 
-
     col1, col2, col3 = st.columns([1.4, 1, 1])
-
-
 
     def negado():
 
@@ -141,12 +131,10 @@ if select == 'Home':
             'href ="https://www.kaggle.com/datasets/rikdifos/credit-card-approval-prediction">Kaggle</a><p>',
                 unsafe_allow_html=True)
 
-
         col4, col5, col6 = st.columns([1.4, 1, 1])
         col4.write(' ')
         col5.image("logos/github_resize.png")
         col6.write(' ')
-
 
         st.write(
             '<p style="text-align: center;"><b>Quer saber como esse projeto foi feito?</b><br>'
@@ -159,27 +147,22 @@ if select == 'Home':
         col8.image("logos/LinkedIn_resize.png")
         col9.write(' ')
 
-
         st.write(
             '<p style="text-align: center;"><b>Da uma olhadinha no meu linkedin!!</b><br>'
             ' Acesse o Linkedin: <a style="color: lightblue" target="_blank"'
             ' href ="https://www.linkedin.com/in/fernando-diderot">Fernando Diderot</a><p>',
             unsafe_allow_html=True)
 
-
     def aprovado():
         st.balloons()
         st.write('<h1 <u style="text-align: center;color: green">BOAAAAA!!! &#128526; </u></h1>',
                  unsafe_allow_html=True)
 
-
         st.write('<h3 <u style="text-align: center;color: green">Seu credito foi aprovado com a gente!!!</u></h3>',
                  unsafe_allow_html=True)
 
-
         st.write('Seria muito divertido de fosse real, ne? mas isso é apenas um projeto de machine learning'
                  ' que utiliza dados do kaggel.')
-
 
         col1, col2, col3 = st.columns([1.5, 1, 1])
         col1.write(' ')
@@ -192,12 +175,10 @@ if select == 'Home':
             'href ="https://www.kaggle.com/datasets/rikdifos/credit-card-approval-prediction">Kaggle</a><p>',
                 unsafe_allow_html=True)
 
-
         col4, col5, col6 = st.columns([1.4, 1, 1])
         col4.write(' ')
         col5.image("logos/github_resize.png")
         col6.write(' ')
-
 
         st.write(
             '<p style="text-align: center;"><b>Quer saber como esse projeto foi feito?</b><br>'
@@ -210,14 +191,11 @@ if select == 'Home':
         col8.image("logos/LinkedIn_resize.png")
         col9.write(' ')
 
-
         st.write(
             '<p style="text-align: center;"><b>Da uma olhadinha no meu linkedin!!</b><br>'
             ' Acesse o Linkedin: <a style="color: lightblue" target="_blank"'
             ' href ="https://www.linkedin.com/in/fernando-diderot">Fernando Diderot</a><p>',
             unsafe_allow_html=True)
-
-
 
     if col2.button('Avaliar crédito'):
            if avaliador_credito(dados_novo_cliente)==1:
@@ -247,7 +225,7 @@ if select == 'Projeto':
         unsafe_allow_html=True)
 
     col1, col2 = st.columns(2)
-    col1.image("logos/kaggle_resize.png",width=280)
+    col1.image("logos/kaggle_resize.png", width=280)
     col1.write('')
 
     col1.write(
@@ -256,7 +234,7 @@ if select == 'Projeto':
         'href ="https://www.kaggle.com/datasets/rikdifos/credit-card-approval-prediction">Kaggle</a><p>',
         unsafe_allow_html=True)
 
-    col2.image("logos/github_resize.png",width=300)
+    col2.image("logos/github_resize.png", width=300)
 
     col2.write(
         '<p style="text-align: center;"><b>Quer saber como esse projeto foi feito?</b><br>'
@@ -267,7 +245,7 @@ if select == 'Projeto':
 if select == 'Contato':
     st.write('<h1 <u style="text-align: center;">Fernando Diderot Carneiro Marinho </u></h1>',
              unsafe_allow_html=True)
-    col10,col11 = st.columns([1,2])
+    col10, col11 = st.columns([1, 2])
     col10.image('logos/foto_perfil.png')
     col11.write('Apaixonado por dados e em criar soluções inovadoras por meio deles. Acredito que a junção'
                 ' de ambos os pilares são capazes de transformar o mundo a nossa volta. Engenheiro Civil formado pelo'
@@ -287,5 +265,9 @@ if select == 'Contato':
         unsafe_allow_html=True)
 
 if select == 'Dashboard':
-   df = pd.read_csv('https://raw.githubusercontent.com/Diderotcm/Solid-bank/main/Dados/df_merge.csv')
-   st.write(df)
+    image = Image.open("logos/logo_solid-bank.png")
+    st.image(image)
+    c1, c2, c3 = st.columns(3)
+    url = 'https://www.streamlit.io/'
+    if c2.button('Abra o DashBord Solid Bank'):
+        webbrowser.open_new_tab(url)
