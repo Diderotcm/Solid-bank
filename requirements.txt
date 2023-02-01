@@ -52,3 +52,4 @@ watchdog==2.2.1
 wincertstore==0.2
 zipp==3.11.0
 streamlit-option-menu==0.3.2
+streamlit-nested-layout==0.1.1
