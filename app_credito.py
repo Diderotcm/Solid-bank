@@ -249,7 +249,7 @@ if select == 'Projeto':
 
 if select == 'Contato':
 
-    col10, col11 = st.columns([0.7, 2])
+    col10, col11 = st.columns([0.5, 2])
     col10.image('logos/foto_perfil.png',use_column_width='always')
     col11.write('<h1 <u style="text-align: left;">Fernando Diderot Carneiro Marinho </u></h1>',
              unsafe_allow_html=True)
