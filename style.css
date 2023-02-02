@@ -13,21 +13,46 @@
 div.css-1r6slb0.e1tzin5v2 {
     background-color: #FFFFFF;
     border: 1px solid #CCCCCC;
-    padding: 5% 5% 5% 10%;
-    border-radius: 5px;
-    
+    padding: 1% 1% 1% 4%;
+    border-radius: 10px;
     border-left: 0.5rem solid #9AD8E1 !important;
     box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15) !important;
     
 }
 
-label.css-mkogse.e16fv1kl2 {
-    color: #36b9cc !important;
+/*valor do card*/
+div.css-1xarl3l.e16fv1kl1 {
+    font-size: 40px;
+    font-weight: 700 !important;
+
+}
+/*texto card*/
+div.css-184tjsw.e16nr0p34 {
+    color: black !important;
+    font-weight: 700 !important;
+}
+
+/*Graficos*/
+div.css-1a32fsj.e19lei0e0 {
+    font-weight: 700 !important;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    border: 1px solid #CCCCCC;
+    border-left: 0.5rem solid #9AD8E1 !important;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15) !important;
+}
+label.css-ocqkz7.e1tzin5v4 {
+    color: #1751CF !important;
     font-weight: 700 !important;
     text-transform: uppercase !important;
 }
 
 
+div.css-1kyxreq.etr89bj2 {
+    vertical-align: center;
+}
+
+css-184tjsw e16nr0p34
 /* Move block container higher */
 div.block-container.css-18e3th9.egzxvld2 {
   margin-top: -5em;

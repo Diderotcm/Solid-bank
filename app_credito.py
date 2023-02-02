@@ -16,20 +16,15 @@ select = option_menu(
         menu_icon='cast',
         default_index=0,
         orientation='horizontal'
-
     )
 
-# with st.sidebar:
-#     select = option_menu(
-#         menu_title='Main menu',
-#         options=['Home', 'Dashboard', 'Projeto', 'Contato'],
-#         icons=['house', 'bar-chart', 'book', 'envelope'],
-#         menu_icon='cast',
-#         default_index=0,
-#
-#     )
+@st.cache
+def load_data():
+    data = pd.read_csv('https://raw.githubusercontent.com/Diderotcm/Solid-bank/main/dados/dados_preparados.csv')
+    return data
+
 if select == 'Home':
-    cl1, cl2 = st.columns([1,1])
+    cl1, cl2, cl3 = st.columns([3,1,3])
     with cl1:
         def avaliador_credito(dados_novo):
 
@@ -41,9 +36,9 @@ if select == 'Home':
             return previsao
 
         image = Image.open("logos/logo_solid-bank.png")
-        st.image(image)
+        st.image(image,width=500)
 
-        st.write('<p style="text-align: center;">Solid bank</strong> é um banco virtual criado com o intuito de facilitar a'
+        st.write('<p style="text-align: justify;">Solid bank</strong> é um banco virtual criado com o intuito de facilitar a'
                  'vida de milhões de brasileiros que sempre buscaram a facilidade'
                  ' e praticidade para resolver tudo na palma da mão</p><br><hr>',
                  unsafe_allow_html=True)
@@ -51,14 +46,14 @@ if select == 'Home':
         st.write('<h1 <u style="text-align: center;color: #166D8A">Avalie seu Crédito</u></h1>',
                  unsafe_allow_html=True)
 
-        st.write('<p style="text-align: center;">Nós vamos precisar de algumas informações para começar a usar'
+        st.write('<p style="text-align: justify;">Nós vamos precisar de algumas informações para começar a usar'
                  ' nossos serviços de crédito,'
                  ' mas prometemos que não levarão mais que <b> 5 min <b> pra preencher tudinho!!!.</p><br><hr>',
                  unsafe_allow_html=True)
 
 
 
-    with cl2:
+    with cl3:
         st.write(" ")
         st.write(" ")
         st.write(" ")
@@ -139,37 +134,31 @@ if select == 'Home':
                      ' no momento</u></h3>',
                      unsafe_allow_html=True)
 
-            st.write('mas nao fique triste, é apenas um projeto de simulação utilizando modelo de'
-                     ' machine learning com dados do Kaggle')
+            st.write('<h3 <u style="text-align: center;color: black">Não fique triste por isso,'
+                     ' é apenas um projeto de machine learning'
+                     ' que utiliza dados do kaggel.</u></h3>',
+                     unsafe_allow_html=True)
 
-            col1, col2, col3 = st.columns([1.5, 1, 1])
-            col1.write(' ')
-            col2.image("logos/kaggle_resize.png")
-            col1.write(' ')
+            col1, col2, col3 = st.columns(3)
+            col1.image("logos/kaggle_resize.png")
 
-            st.write(
+            col1.write(
                 '<p style="text-align: center;"><b>Quer saber de onde os dados foram tirados?</b><br> '
                 ' Acesse os dados: <a style="color: lightblue" target="_blank" '
                 'href ="https://www.kaggle.com/datasets/rikdifos/credit-card-approval-prediction">Kaggle</a><p>',
                 unsafe_allow_html=True)
 
-            col4, col5, col6 = st.columns([1.4, 1, 1])
-            col4.write(' ')
-            col5.image("logos/github_resize.png")
-            col6.write(' ')
+            col2.image("logos/github_resize.png")
 
-            st.write(
+            col2.write(
                 '<p style="text-align: center;"><b>Quer saber como esse projeto foi feito?</b><br>'
                 ' Acesse no Github: <a style="color: lightblue" target="_blank"'
                 ' href ="https://github.com/Diderotcm/Solid-bank">Solid-Bank</a><p>',
                 unsafe_allow_html=True)
 
-            col7, col8, col9 = st.columns([1.4, 1, 1])
-            col7.write(' ')
-            col8.image("logos/LinkedIn_resize.png")
-            col9.write(' ')
+            col3.image("logos/LinkedIn_resize.png")
 
-            st.write(
+            col3.write(
                 '<p style="text-align: center;"><b>Da uma olhadinha no meu linkedin!!</b><br>'
                 ' Acesse o Linkedin: <a style="color: lightblue" target="_blank"'
                 ' href ="https://www.linkedin.com/in/fernando-diderot">Fernando Diderot</a><p>',
@@ -220,64 +209,65 @@ if select == 'Home':
                else:
                    negado()
 
-
 if select == 'Projeto':
-    st.write('<h2 <u style="text-align: center;color: white">Informações sobre o projeto.</u></h2>',
+    st.write('<h4 <u style="text-align: center;color: black">Quer saber de cada detalhe desse projeto?</u></h4>',
                  unsafe_allow_html=True)
     st.write('')
-    st.write('')
-    st.write('')
-    st.write('')
 
-    st.write(
-        '<p style="text-align: left;"><b>📙 Notebook de preparação dos dados:</b><br> '
+    col1, col2, col3 = st.columns([1,2,2])
+    col2.image("logos/emoji_livro.png", width=100)
+    col2.write(
+        '<p style="text-align: left;"><b>Notebook de preparação dos dados:</b><br> '
         '  <a style="color: lightblue" target="_blank" '
         'href ="https://github.com/Diderotcm/Solid-bank/blob/main/Notebooks/Solid_Bank_prepara%C3%A7%C3%A3o_dados.ipynb">Notebook</a><p>',
         unsafe_allow_html=True)
 
-    st.write(
-        '<p style="text-align: left;"><b>📙 Notebook de machine learning:</b><br> '
+    col3.image("logos/emoji_livro.png", width=100)
+    col3.write(
+        '<p style="text-align: left;"><b>Notebook de machine learning:</b><br> '
         '  <a style="color: lightblue" target="_blank" '
         'href ="https://github.com/Diderotcm/Solid-bank/blob/main/Notebooks/Solid-Bank-Machine_Leaning.ipynb">Notebook</a><p>',
         unsafe_allow_html=True)
 
-    col1, col2 = st.columns(2)
-    col1.image("logos/kaggle_resize.png", width=280)
-    col1.write('')
 
-    col1.write(
-        '<p style="text-align: center;"><b>Quer saber de onde os dados foram tirados?</b><br> '
+    col2.image("logos/kaggle_resize.png", width=100)
+    col2.write('')
+
+    col2.write(
+        '<p style="text-align: left;"><b>Quer saber de onde os dados foram tirados?</b><br> '
         ' Acesse os dados: <a style="color: lightblue" target="_blank" '
         'href ="https://www.kaggle.com/datasets/rikdifos/credit-card-approval-prediction">Kaggle</a><p>',
         unsafe_allow_html=True)
 
-    col2.image("logos/github_resize.png", width=300)
+    col3.image("logos/github_resize.png", width=115)
 
-    col2.write(
-        '<p style="text-align: center;"><b>Quer saber como esse projeto foi feito?</b><br>'
+    col3.write(
+        '<p style="text-align: left;"><b>Quer saber como esse projeto foi feito?</b><br>'
         ' Acesse no Github: <a style="color: lightblue" target="_blank"'
         ' href ="https://github.com/Diderotcm/Solid-bank">Solid-Bank</a><p>',
         unsafe_allow_html=True)
 
 if select == 'Contato':
-    st.write('<h1 <u style="text-align: center;">Fernando Diderot Carneiro Marinho </u></h1>',
+
+    col10, col11 = st.columns([0.7, 2])
+    col10.image('logos/foto_perfil.png',width=320)
+    col11.write('<h1 <u style="text-align: left;">Fernando Diderot Carneiro Marinho </u></h1>',
              unsafe_allow_html=True)
-    col10, col11 = st.columns([1, 2])
-    col10.image('logos/foto_perfil.png')
-    col11.write('Apaixonado por dados e em criar soluções inovadoras por meio deles. Acredito que a junção'
+    col11.write('<p align="justify">Apaixonado por dados e em criar soluções inovadoras por meio deles. Acredito que a junção'
                 ' de ambos os pilares são capazes de transformar o mundo a nossa volta. Engenheiro Civil formado pelo'
                 ' Instituto Politecnico de Bragançade de Portugal e pela Universidade de Fortaleza. Pós graduação em'
                 ' Data Science e Analytics pela Univerdade de São Paulo (USP). No meu cotidiano sempre tento aprender'
                 ' coisas novas e solucionar problemas de forma prática, rápidas e transformadoras, tentando desfrutar ao'
-                ' máximo do aprendizado adquirido em cada desafio.')
+                ' máximo do aprendizado adquirido em cada desafio.</p>',
+                unsafe_allow_html=True)
     col11.write(
         '<p style="text-align: left;"><b></b><br>'
-        'Email: <a style="color: lightblue" target="_blank"'
+        'Email: <a style="color: blue" target="_blank"'
         ' ">diderotmarinho@gmail.com</a><p>',
         unsafe_allow_html=True)
     col11.write(
         '<p style="text-align: left;"><b></b><br>'
-        'Linkedin: <a style="color: lightblue" target="_blank"'
+        'Linkedin: <a style="color: blue" target="_blank"'
         ' href ="https://www.linkedin.com/in/fernando-diderot">Fernando Diderot</a><p>',
         unsafe_allow_html=True)
 
@@ -292,22 +282,29 @@ if select == 'Dashboard':
 
     st.sidebar.subheader('Donut')
     donut_value = st.sidebar.selectbox('Por', ('IMOVEL_PROPRIO', 'TEM_CARRO', 'GENERO'))
-    st.sidebar.markdown('''
-    ---
-    Criado de ❤️ por [Fernando Diderot](www.linkedin.com/in/fernando-diderot).
-    ''')
+    st.sidebar.write(
+        '<p style="text-align: left;"><b></b><br>'
+        'criado de ❤️ por <a style="color: blue" target="_blank"'
+        ' href ="https://www.linkedin.com/in/fernando-diderot">Fernando Diderot</a><p>',
+        unsafe_allow_html=True)
 
     # Row A
-    dados = pd.read_csv('https://raw.githubusercontent.com/Diderotcm/Solid-bank/main/dados/dados_preparados.csv')
-    st.markdown('### Metrics')
+    dados = load_data()
+    st.markdown('### Clientes')
     col1, col2, col3 = st.columns(3)
-    col1.metric('Clientes', value=dados['ID'].nunique())
-    col2.metric('Bons pagadores', value=dados['BOM'].value_counts()[1])
-    col3.metric('% Bons pagadores', value=round(dados['BOM'].value_counts(normalize=True)[1] * 100))
+    col1.metric('Clientes',
+                value=dados['ID'].nunique())
+    col2.metric('Bons pagadores',
+                value=dados['BOM'].value_counts()[1])
+    col3.metric('% Bons pagadores',
+                value=round(dados['BOM'].value_counts(normalize=True)[1] * 100))
 
     # Row B
     st.markdown('### Distribuição')
-    fig_2 = px.histogram(dados, x=hist_value, width=1000)
+    fig_2 = px.histogram(dados,
+                         x=hist_value,
+                         width=1070,
+                         height=350)
     st.write(fig_2)
 
     # Row C
@@ -319,12 +316,24 @@ if select == 'Dashboard':
         df_1.rename(columns={'ID': 'Count'}, inplace=True)
         df_1.sort_values('Count', inplace=True, ascending=True)
 
-        fig_1 = px.bar(df_1, x='Count', y='CAT_RENDA', labels={'CAT_RENDA': ' ', 'Count': ' '}, height=350)
+        fig_1 = px.bar(df_1,
+                       x='Count',
+                       y='CAT_RENDA',
+                       labels={'CAT_RENDA': ' ', 'Count': ' '},
+                       width=720,
+                       height=350)
         st.write(fig_1)
 
     with c2:
+        st.write('###  .')
         df_2 = dados.groupby(donut_value)['ID'].count().reset_index()
         df_2.rename(columns={'ID': 'Contagem'}, inplace=True)
         df_2.replace([0, 1], ['Não tem', 'Tem'], inplace=True)
-        fig_2 = px.pie(df_2, values='Contagem', names=donut_value, hole=.5, width=380)
+        fig_2 = px.pie(df_2,
+                       values='Contagem',
+                       names=donut_value,
+                       hole=.5,
+                       width=300,
+                       height=350,
+                       title=donut_value)
         st.write(fig_2)
