@@ -325,7 +325,7 @@ if select == 'Dashboard':
         st.write(fig_1)
 
     with c2:
-        st.write('###  .')
+        st.write('### Clientes por categoria')
         df_2 = dados.groupby(donut_value)['ID'].count().reset_index()
         df_2.rename(columns={'ID': 'Contagem'}, inplace=True)
         df_2.replace([0, 1], ['Não tem', 'Tem'], inplace=True)
