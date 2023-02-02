@@ -303,7 +303,7 @@ if select == 'Dashboard':
     st.markdown('### Distribuição')
     fig_2 = px.histogram(dados,
                          x=hist_value,
-                         width=1060,
+                         width=1010,
                          height=350)
     st.write(fig_2)
 
