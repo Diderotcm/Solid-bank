@@ -250,7 +250,7 @@ if select == 'Projeto':
 if select == 'Contato':
 
     col10, col11 = st.columns([0.7, 2])
-    col10.image('logos/foto_perfil.png',width=320)
+    col10.image('logos/foto_perfil.png',use_column_width='always')
     col11.write('<h1 <u style="text-align: left;">Fernando Diderot Carneiro Marinho </u></h1>',
              unsafe_allow_html=True)
     col11.write('<p align="justify">Apaixonado por dados e em criar soluções inovadoras por meio deles. Acredito que a junção'
@@ -303,9 +303,9 @@ if select == 'Dashboard':
     st.markdown('### Distribuição')
     fig_2 = px.histogram(dados,
                          x=hist_value,
-                         width=1010,
+                         width=800,
                          height=350)
-    st.write(fig_2)
+    st.plotly_chart(fig_2, use_container_width=True)
 
     # Row C
     c1, c2 = st.columns((7, 3))
@@ -322,7 +322,7 @@ if select == 'Dashboard':
                        labels={'CAT_RENDA': ' ', 'Count': ' '},
                        width=720,
                        height=350)
-        st.write(fig_1)
+        st.plotly_chart(fig_1, use_container_width=True)
 
     with c2:
         st.write('### Clientes por categoria')
@@ -336,4 +336,4 @@ if select == 'Dashboard':
                        width=300,
                        height=350,
                        title=donut_value)
-        st.write(fig_2)
+        st.plotly_chart(fig_2, use_container_width=True)
