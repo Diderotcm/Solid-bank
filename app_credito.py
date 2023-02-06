@@ -36,7 +36,7 @@ if select == 'Home':
             return previsao
 
         image = Image.open("logos/logo_solid-bank.png")
-        st.image(image,width=500)
+        st.image(image,use_column_width='always')
 
         st.write('<p style="text-align: justify;">Solid bank</strong> é um banco virtual criado com o intuito de facilitar a'
                  'vida de milhões de brasileiros que sempre buscaram a facilidade'
